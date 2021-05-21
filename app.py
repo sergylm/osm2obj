@@ -47,7 +47,7 @@ def prueba():
     open('model.osm','wb').write(r.content)
     osm_to_obj(coords)
 
-    return parsed_data
+    return "wait"
 
 def parse_obj(obj):
     for key in obj:
