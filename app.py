@@ -66,7 +66,7 @@ def osm_to_obj(coords):
             f.write("\t"+str(item[0])+" "+str(item[1])+"\n")
         f.write('END')
 
-    trim = r"""osmconvert model.osm -B=polygone.poly -o=model2.osm"""
+    trim = r"""./osmconvert model.osm -B=polygone.poly -o=model2.osm"""
     # trim = r"""osmconvert.exe model.osm -B=polygone.poly -o=model2.osm"""
     os.system(trim)
     os.remove("model.osm")
