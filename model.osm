@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="osmconvert 0.8.10">
+	<bounds minlat="40.4775843" minlon="-3.7004854" maxlat="40.4779026" maxlon="-3.7001314"/>
+	<node id="2978260447" lat="40.4776448" lon="-3.7003495" version="1" timestamp="2014-07-24T23:03:39Z" changeset="24339816" uid="316694" user="Luiyo"/>
+	<node id="2978260448" lat="40.4776719" lon="-3.7004079" version="1" timestamp="2014-07-24T23:03:39Z" changeset="24339816" uid="316694" user="Luiyo"/>
+	<node id="2978260449" lat="40.4776791" lon="-3.7001636" version="1" timestamp="2014-07-24T23:03:39Z" changeset="24339816" uid="316694" user="Luiyo"/>
+	<node id="2978260450" lat="40.4776806" lon="-3.7003609" version="1" timestamp="2014-07-24T23:03:39Z" changeset="24339816" uid="316694" user="Luiyo"/>
+	<node id="2978260451" lat="40.4777089" lon="-3.7001731" version="1" timestamp="2014-07-24T23:03:39Z" changeset="24339816" uid="316694" user="Luiyo"/>
+	<node id="2978260461" lat="40.4777458" lon="-3.7004315" version="1" timestamp="2014-07-24T23:03:39Z" changeset="24339816" uid="316694" user="Luiyo"/>
+	<node id="2978260471" lat="40.4777971" lon="-3.7001536" version="1" timestamp="2014-07-24T23:03:39Z" changeset="24339816" uid="316694" user="Luiyo"/>
+	<node id="2978260474" lat="40.4778047" lon="-3.7001559" version="1" timestamp="2014-07-24T23:03:40Z" changeset="24339816" uid="316694" user="Luiyo"/>
+	<way id="294262329" version="2" timestamp="2020-10-11T21:18:01Z" changeset="92314220" uid="410354" user="Oscar Antón">
+		<nd ref="2978260471"/>
+		<nd ref="2978260474"/>
+		<nd ref="2978260482"/>
+		<nd ref="2978260476"/>
+		<nd ref="2978260466"/>
+		<nd ref="2978260464"/>
+		<nd ref="2978260463"/>
+		<nd ref="2978260462"/>
+		<nd ref="2978260460"/>
+		<nd ref="2978260453"/>
+		<nd ref="2978260456"/>
+		<nd ref="2978260454"/>
+		<nd ref="2978260457"/>
+		<nd ref="2978260455"/>
+		<nd ref="2978260459"/>
+		<nd ref="2978260458"/>
+		<nd ref="2978260471"/>
+		<tag k="addr:city" v="Madrid"/>
+		<tag k="addr:country" v="ES"/>
+		<tag k="addr:housenumber" v="18"/>
+		<tag k="addr:postcode" v="28029"/>
+		<tag k="addr:street" v="Calle de Melchor Fernández Almagro"/>
+		<tag k="building" v="apartments"/>
+		<tag k="building:levels" v="15"/>
+	</way>
+	<way id="294262330" version="2" timestamp="2020-10-11T21:18:01Z" changeset="92314220" uid="410354" user="Oscar Antón">
+		<nd ref="2978260461"/>
+		<nd ref="2978260471"/>
+		<nd ref="2978260458"/>
+		<nd ref="2978260452"/>
+		<nd ref="2978260451"/>
+		<nd ref="2978260449"/>
+		<nd ref="2978260447"/>
+		<nd ref="2978260450"/>
+		<nd ref="2978260448"/>
+		<nd ref="2978260461"/>
+		<tag k="addr:city" v="Madrid"/>
+		<tag k="addr:country" v="ES"/>
+		<tag k="addr:housenumber" v="20"/>
+		<tag k="addr:postcode" v="28029"/>
+		<tag k="addr:street" v="Calle de Melchor Fernández Almagro"/>
+		<tag k="building" v="apartments"/>
+		<tag k="building:levels" v="15"/>
+	</way>
+</osm>
