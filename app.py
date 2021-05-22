@@ -7,7 +7,6 @@ import zipfile
 
 app = Flask(__name__)
 
-DOWNLOAD_DIRECTORY = "folder"
 
 @app.route("/")
 def home():
@@ -43,11 +42,12 @@ def prueba():
     open('model.osm','wb').write(r.content)
     osm_to_obj(coords)
 
+
     return zip(parsed_data['name'])
 
-@app.route("/test" , methods=['POST'])
-def test():
-    return send_file('kkkk.zip', mimetype='zip', attachment_filename="kkk.zip",as_attachment=True)
+# @app.route("/test" , methods=['POST'])
+# def test():
+#     return send_file('kkkk.zip', mimetype='zip', attachment_filename="kkk.zip",as_attachment=True)
 
 def osm_to_obj(coords):
 
@@ -64,12 +64,13 @@ def osm_to_obj(coords):
     os.rename("model2.osm", "model.osm")
     convert = r"""java -Xmx512m -jar OSM2World/OSM2World.jar -i model.osm -o model3d.obj""" 
     os.system(convert)
-    os.rename("model3d.obj.mtl","model3dobj.mtl")
 
     pass
 
 def zip(name):
+    os.rename("model3d.obj",name+".obj")
+    os.rename("model3d.obj,mtl",name+".mtl")
     with zipfile.ZipFile(name+".zip",'w', zipfile.ZIP_DEFLATED) as zpf:
-        zpf.write("model3d.obj")
-        zpf.write("model3dobj.mtl")
+        zpf.write(name+".obj")
+        zpf.write(name+".mtl")
     return send_file(name+".zip", mimetype='zip', attachment_filename=name+".zip", as_attachment=True)
