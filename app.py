@@ -45,9 +45,9 @@ def prueba():
 
     return zip(parsed_data['name'])
 
-# @app.route("/test" , methods=['POST'])
-# def test():
-#     return send_file('kkkk.zip', mimetype='zip', attachment_filename="kkk.zip",as_attachment=True)
+@app.route("/test" , methods=['POST'])
+def test():
+    return send_file('kkkk.zip', mimetype='zip', attachment_filename="kkk.zip",as_attachment=True)
 
 def osm_to_obj(coords):
 
