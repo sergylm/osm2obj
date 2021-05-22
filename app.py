@@ -69,7 +69,7 @@ def osm_to_obj(coords):
 
 def zip(name):
     os.rename("model3d.obj",name+".obj")
-    os.rename("model3d.obj,mtl",name+".mtl")
+    os.rename("model3d.obj.mtl",name+".mtl")
     with zipfile.ZipFile(name+".zip",'w', zipfile.ZIP_DEFLATED) as zpf:
         zpf.write(name+".obj")
         zpf.write(name+".mtl")
