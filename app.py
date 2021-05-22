@@ -1,13 +1,8 @@
-from flask import Flask,request, send_from_directory
+from flask import Flask,request, send_file
 import json
 import os
-from ast import literal_eval
 import requests
-
-import flask
-from flask.json import jsonify
-from werkzeug.http import parse_date
-from werkzeug.wrappers import response
+import zipfile
 
 
 app = Flask(__name__)
@@ -21,6 +16,7 @@ def home():
 @app.route("/osm2obj" , methods=['POST'])
 def prueba():
     data = request.data
+    print(data)
     parsed_data = json.loads(data.decode('utf-8').replace("'",'"'))
     
     coordsLat = parsed_data['coords']['lat']
@@ -47,16 +43,11 @@ def prueba():
     open('model.osm','wb').write(r.content)
     osm_to_obj(coords)
 
-    return "wait"
+    return zip(parsed_data['name'])
 
-def parse_obj(obj):
-    for key in obj:
-        if isinstance(obj[key], str):
-            obj[key] = obj[key].encode('latin_1').decode('utf-8')
-        elif isinstance(obj[key], list):
-            obj[key] = list(map(lambda x: x if type(x) != str else x.encode('latin_1').decode('utf-8'), obj[key]))
-        pass
-    return obj
+@app.route("/test" , methods=['POST'])
+def test():
+    return send_file('kkkk.zip', mimetype='zip', attachment_filename="kkk.zip",as_attachment=True)
 
 def osm_to_obj(coords):
 
@@ -73,5 +64,12 @@ def osm_to_obj(coords):
     os.rename("model2.osm", "model.osm")
     convert = r"""java -Xmx512m -jar OSM2World/OSM2World.jar -i model.osm -o model3d.obj""" 
     os.system(convert)
+    os.rename("model3d.obj.mtl","model3dobj.mtl")
 
     pass
+
+def zip(name):
+    with zipfile.ZipFile(name+".zip",'w', zipfile.ZIP_DEFLATED) as zpf:
+        zpf.write("model3d.obj")
+        zpf.write("model3dobj.mtl")
+    return send_file(name+".zip", mimetype='zip', attachment_filename=name+".zip", as_attachment=True)
